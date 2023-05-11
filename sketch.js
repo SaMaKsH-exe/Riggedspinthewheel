@@ -11,7 +11,7 @@ function setup() {
   angleMode(DEGREES);
 }
 
-function draw() {
+function draw() { 
   background(220);
   translate(width / 2, height / 2);
 
