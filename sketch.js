@@ -3,15 +3,17 @@ let weights = [0.75, 0.25];
 let angle = 0;
 let spinning = false;
 let result;
+let diameter;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  textAlign(LEFT, RIGHT);
-  textSize(23);
+  diameter = min(width, height) * 0.8;
+  textAlign(CENTER, CENTER);
+  textSize(diameter / 20);
   angleMode(DEGREES);
 }
 
-function draw() { 
+function draw() {
   background(220);
   translate(width / 2, height / 2);
 
@@ -20,10 +22,10 @@ function draw() {
     let arcStart = i * 360 / options.length;
     let arcEnd = (i + 1) * 360 / options.length;
     fill(255 / options.length * (i + 1), 100, 100);
-    arc(0, 0, 300, 300, arcStart + angle, arcEnd + angle, PIE);
+    arc(0, 0, diameter, diameter, arcStart + angle, arcEnd + angle, PIE);
     fill(255);
     rotate(arcStart + angle + (arcEnd - arcStart) / 2);
-    text(options[i], 0, -120);
+    text(options[i], 0, -diameter / 2 * 0.8);
     rotate(-(arcStart + angle + (arcEnd - arcStart) / 2));
   }
 
