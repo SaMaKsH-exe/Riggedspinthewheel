@@ -1,6 +1,7 @@
 let options = ["Sam", "Riya"];
 let weights = [0.75, 0.25];
 let angle = 0;
+
 let spinning = false;
 let result;
 let diameter;
@@ -33,6 +34,7 @@ function draw() {
     let arcEnd = i * 360 / options.length;
     fill(255);
     rotate(arcStart + angle + (arcEnd - arcStart) / 2);
+    text(options[j], 0, -diameter / 2 * 0.8);
     rotate(-(arcStart + angle + (arcEnd - arcStart) / 2));
   }
 
