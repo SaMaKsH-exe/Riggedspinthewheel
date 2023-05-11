@@ -5,7 +5,7 @@ let spinning = false;
 let result;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
   textAlign(LEFT, RIGHT);
   textSize(23);
   angleMode(DEGREES);
