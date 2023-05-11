@@ -8,7 +8,7 @@ let diameter;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   diameter = min(width, height) * 0.8;
-  textAlign(CENTER, CENTER);
+  textAlign(RIGHT, RIGHT);
   textSize(diameter / 20);
   angleMode(DEGREES);
 }
