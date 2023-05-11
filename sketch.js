@@ -18,14 +18,21 @@ function draw() {
   translate(width / 2, height / 2);
 
   // draw the wheel
-  for (let i = 0; i < options.length; i++) {
-    let arcStart = i * 360 / options.length;
-    let arcEnd = (i + 1) * 360 / options.length;
-    fill(255 / options.length * (i + 1), 100, 100);
+  for (let i = 1; i <= options.length; i++) {
+    let j = i - 1;
+    let arcStart = j * 360 / options.length;
+    let arcEnd = i * 360 / options.length;
+    fill(255 / options.length * i, 100, 100);
     arc(0, 0, diameter, diameter, arcStart + angle, arcEnd + angle, PIE);
+  }
+
+  // draw the text on the wheel
+  for (let i = 1; i <= options.length; i++) {
+    let j = i - 1;
+    let arcStart = j * 360 / options.length;
+    let arcEnd = i * 360 / options.length;
     fill(255);
     rotate(arcStart + angle + (arcEnd - arcStart) / 2);
-    text(options[i], 0, -diameter / 2 * 0.8);
     rotate(-(arcStart + angle + (arcEnd - arcStart) / 2));
   }
 
